@@ -10,13 +10,13 @@
         genre: ['액션', 'SF', '모험'],
         rating: 4.8,
         cast: ['로버트 다우니 주니어 (닥터 둠)', '페드로 파스칼 (리드 리차즈)', '바네사 커비 (수 스톰)', '조셉 퀸 (조니 스톰)'],
-        synopsis: '새로운 위협 닥터 둠의 등장과 함께 다중 우주의 운명을 걸고 다시 집결한 어벤져스 히어로들의 거대한 서사시.'
+        synopsis: '새로운 위협 닥터 둠의 등장과 함께 다중 우주의 운명을 걸고 다시 집결한 어벤져스 히어로들의 거대한 이야기.'
     },
     {
         id: 2,
         title: '스파이더맨: 브랜드 뉴 데이',
         date: '2026-07-24',
-        poster: 'poster/poster_spiderman4.jpg',
+        poster: 'poster/poster_spidermanbrandnewday.jpg',
         director: '데스틴 대니얼 크렛슨',
         genre: ['액션', 'SF', '모험'],
         rating: 4.6,
