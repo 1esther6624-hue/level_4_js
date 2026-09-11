@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤 -1</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <script src="./scripts/scroll1.js" defer></script>
+    <style>
+        #top {
+            position: fixed; right: 25px; bottom: 25px;
+            background: #ff0; width: 50px; height: 50px;
+            border-radius: 50%;
+            display: none; /* 초기 숨기기 */
+        }
+        #top.active {display: block;}
+        header {
+            position: fixed; left: 0; top: 0;
+            text-align: center;
+            width: 100%; height: 80px; background: #eee;
+            display: flex; flex-flow: row wrap;
+            justify-content: space-between;
+            transition: all 1s; overflow: hidden;
+        }
+        header > * {line-height: 40px;}
+        header nav {
+            background: yellow;
+        }
+        main {
+            height: 500vh;
+            background: linear-gradient(brown, pink);
+        }
+        
+        header h1 {width: 100%; background: skyblue;}
+        header .lnb {background: lightgreen;}
+        /* ======================header변경디자인 (스크롤 y > 120) */
+        header.active {
+            flex-flow: row nowrap;
+        }
+        header.active > * {flex: 1;}
+        header.active h1 {flex: 0.3;}
+        header.active nav {}
+        header.active .lnb {}
+        header.active .lnb a {}
+        /* main */
+        main {background: linear-gradient(brown, pink);}
+        main aside {
+            position:sticky; top: 120px;
+        }
+        main aside a {margin-right: 20px;}
+        main aside a.active {border-bottom: 4px solid #000;}
+        main section {height: 100vh;}
+        main section h1 {font-size: 2rem; padding: 20px 15px;}
+    </style>
+</head>
+<body>
+    <button type="button" id="top">위로</button>
+    <header>
+        <h1>logo</h1>
+        <nav>스크롤값</nav>
+        <div class="lnb">
+            <a href="#">로그인</a>
+            <a href="#">장바구니</a>
+            <a href="#">전체메뉴</a>
+        </div>
+    </header>
+    <main>
+        <!-- section id 와 href의 관계는 해당 아이디로 이동하는 바로가기 링크 -->
+        <!-- data-target과 section id의 관계는 자바스크립트에서 스크롤하면서 보고있는 section id 기준같은 data-* 속성을 가지고 있는 a를 찾아서 active클래스를 주기 위한 준비 -->
+        <aside>
+            <a href="#sec1" data-target="sec1" class="active">best</a>
+            <a href="#sec2" data-target="sec2">new</a>
+            <a href="#sec3" data-target="sec3">md pick</a>
+            <a href="#sec4" data-target="sec4">review</a>
+        </aside>
+        <section id="sec1" class="best"><h1>BEST</h1></section>
+        <section id="sec2" class="new"><h1>NEW</h1></section>
+        <section id="sec3" class="md"><h1>MD PICK</h1></section>
+        <section id="sec4" class="review"><h1>REVIEW</h1></section>
+    </main>
+    <footer>footer</footer>
+</body>
+</html>
