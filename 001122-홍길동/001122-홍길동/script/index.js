@@ -115,4 +115,25 @@ $('#popup .close').on('click',function(){
 $('.notice_gallery .title a').on('click',function(){
     $('notice_gallery .title a').removeClass('active');
     $(this).addClass('active');
+
+    let i = $(this).index(); //현재 클릭한 대상 인덱스 변수저장
+
+    $('.notice_gallery .contents > *').hide(); //모든 내용 숨기기
+    // $('.notice_gallery .contents > *').eq($i).show();
+    $('.notice_gallery .contents > *').eq($i).css('display','flex');
+    //eq => 몇번째 인덱스에 해당하는 요소인지 세는 제이쿼리 함수
 })
+
+//제이쿼리v 슬라이드
+let count = 0; //초기값 0으로 시작해서 heroSlide의 개수만큼 증가
+
+const slideTimer = setInterval(function(){
+    count++; //3초마다 증가
+    if(count > 2){count = 0}
+    // $('.hero_wrapper').css('transform',`-${count*300}px`);
+    $('.hero_wrapper').css('transform', 'translateY(-'+(count*300)+'px)');
+    // 기존 js css에서 주로 다루는 transition + transform 애니메이션 묶음 전용 제이쿼리 함수
+    $('.hore_wapper').animation({
+        top:'-'+(count*300)+'px',
+    },400)
+},3000)
